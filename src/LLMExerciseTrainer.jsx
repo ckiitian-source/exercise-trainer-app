@@ -5,7 +5,7 @@ export default function FormPerfect() {
   const videoRef = useRef(null);
   const comparisonVideoRef = useRef(null);
   const overlayCanvasRef = useRef(null);
-  const REACT_APP_API_URL="https://your-service-name.onrender.com";
+  const REACT_APP_API_URL="https://exercise-trainer-app-1.onrender.com";
 
 
   // Core states
