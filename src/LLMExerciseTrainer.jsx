@@ -157,7 +157,7 @@ export default function FormPerfect() {
       return;
     }
 
-    fetch(`https://exercise-trainer-app-1.onrender.com/api/exercises?muscle_group=${muscleGroup}`)
+    fetch("https://exercise-trainer-app-1.onrender.com/api/exercises?muscle_group=${muscleGroup}")
       .then((res) => res.json())
       .then((data) => {
         setExercises(data.exercises || []);
@@ -173,7 +173,7 @@ export default function FormPerfect() {
   useEffect(() => {
     if (!selectedExercise || !muscleGroup) return;
 
-    fetch(`https://exercise-trainer-app-1.onrender.com/api/exercise-details?muscle_group=${muscleGroup}&exercise_name=${selectedExercise}`)
+    fetch("https://exercise-trainer-app-1.onrender.com/api/exercise-details?muscle_group=${muscleGroup}&exercise_name=${selectedExercise}")
       .then((res) => res.json())
       .then((data) => setExerciseDetails(data))
       .catch((err) => {
