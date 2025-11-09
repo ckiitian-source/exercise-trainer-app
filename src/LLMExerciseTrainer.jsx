@@ -7,7 +7,6 @@ export default function FormPerfect() {
   const overlayCanvasRef = useRef(null);
   const REACT_APP_API_URL="https://exercise-trainer-app-1.onrender.com";
 
-
   // Core states
   const [muscleGroup, setMuscleGroup] = useState("");
   const [exercises, setExercises] = useState([]);
