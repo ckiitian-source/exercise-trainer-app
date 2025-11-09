@@ -5,6 +5,7 @@ export default function FormPerfect() {
   const videoRef = useRef(null);
   const comparisonVideoRef = useRef(null);
   const overlayCanvasRef = useRef(null);
+  const REACT_APP_API_URL="https://exercise-trainer-app-1.onrender.com";
 
   // Core states
   const [muscleGroup, setMuscleGroup] = useState("");
@@ -156,7 +157,7 @@ export default function FormPerfect() {
       return;
     }
 
-    fetch(`http://127.0.0.1:8000/api/exercises?muscle_group=${muscleGroup}`)
+    fetch(`https://exercise-trainer-app-1.onrender.com/api/exercises?muscle_group=${muscleGroup}`)
       .then((res) => res.json())
       .then((data) => {
         setExercises(data.exercises || []);
@@ -172,7 +173,7 @@ export default function FormPerfect() {
   useEffect(() => {
     if (!selectedExercise || !muscleGroup) return;
 
-    fetch(`http://127.0.0.1:8000/api/exercise-details?muscle_group=${muscleGroup}&exercise_name=${selectedExercise}`)
+    fetch(`https://exercise-trainer-app-1.onrender.com/api/exercise-details?muscle_group=${muscleGroup}&exercise_name=${selectedExercise}`)
       .then((res) => res.json())
       .then((data) => setExerciseDetails(data))
       .catch((err) => {
@@ -391,7 +392,7 @@ export default function FormPerfect() {
       setUploadProgress(60);
       setStatus("Sending to AI for analysis...");
 
-      const response = await fetch("http://127.0.0.1:8000/api/video/analyze", {
+      const response = await fetch("https://exercise-trainer-app-1.onrender.com/api/video/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
